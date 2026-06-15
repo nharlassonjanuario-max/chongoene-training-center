@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chongoene Computer Training Center</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="image/logotipo.png" alt="Logo">
+    <span>Chongoene Computer Training Center</span>
+  </div>
+
+  <a href="#inscricao" class="nav-btn">Inscrever-se</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Transforme o Seu Futuro com a Tecnologia</h1>
+
+    <p>
+      Informática, Excel, Inglês e Programação Web
+      com aulas práticas e certificação.
+    </p>
+
+    <a href="#inscricao" class="btn">Começar Agora</a>
+  </div>
+</section>
+
+<!-- CURSOS -->
+<section class="section">
+  <h2>Nossos Cursos</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>💻 Informática Básica</h3>
+      <p><strong>Duração:</strong> 1 mês e 2 semanas</p>
+      <p><strong>Valor:</strong> 1.500 MT</p>
+      <p>Windows, Word, Excel, PowerPoint e Internet</p>
+    </div>
+
+    <div class="card">
+      <h3>🖥️ Informática Avançada</h3>
+      <p><strong>Duração:</strong> 3 meses</p>
+      <p><strong>Valor:</strong> 3.000 MT</p>
+      <p>
+        Word, Excel, PowerPoint, Access,
+        Outlook, Publisher, OneNote e Teams
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>📊 Excel Avançado e Profissional</h3>
+      <p><strong>Duração:</strong> 2 meses</p>
+      <p><strong>Valor:</strong> 2.000 MT</p>
+      <p>Fórmulas, gráficos, relatórios e análise de dados.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌍 Inglês (3 Níveis)</h3>
+      <p><strong>Duração:</strong> 9 meses</p>
+      <p><strong>Valor:</strong> 1.000 MT</p>
+      <p>Conversação, gramática, leitura e escrita.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Programação Web</h3>
+      <p><strong>Duração:</strong> 3 meses</p>
+      <p><strong>Valor:</strong> 3.000 MT</p>
+      <p>HTML, CSS e JavaScript.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="section dark">
+  <h2>Por que escolher-nos?</h2>
+
+  <div class="cards">
+    <div class="card">✔️ Aulas práticas</div>
+    <div class="card">✔️ Professores qualificados</div>
+    <div class="card">✔️ Turmas reduzidas</div>
+    <div class="card">✔️ Certificado disponível</div>
+    <div class="card">✔️ Ambiente moderno de aprendizagem</div>
+  </div>
+</section>
+
+<!-- INSCRIÇÃO -->
+<section id="inscricao" class="section">
+
+  <h2>Inscreva-se Agora</h2>
+
+  <div class="form-box">
+
+    <input id="nome" placeholder="Nome completo">
+
+    <input id="telefone" placeholder="Telefone">
+
+    <select id="curso">
+      <option value="">Escolher curso</option>
+      <option>Informática Básica</option>
+      <option>Informática Avançada</option>
+      <option>Excel Avançado e Profissional</option>
+      <option>Inglês (3 Níveis)</option>
+      <option>Programação Web</option>
+    </select>
+
+    <select id="nivel">
+      <option value="">Nível (Apenas Inglês)</option>
+      <option>Básico I</option>
+      <option>Básico II</option>
+      <option>Intermédio</option>
+    </select>
+
+    <select id="metodo" onchange="mostrarNumero()">
+      <option value="">Método de pagamento</option>
+      <option>M-Pesa</option>
+      <option>E-Mola</option>
+      <option>Banco</option>
+    </select>
+
+    <p id="numeroPagamento"></p>
+
+    <button onclick="inscrever()">
+      Finalizar Inscrição
+    </button>
+
+  </div>
+
+  <div id="resposta"></div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <p>
+    📍 Chongoene – Reprografia Gigabyte,
+    ao pé da Paragem do Chibuto
+  </p>
+
+  <p>
+    📲 WhatsApp: 870 569 900
+  </p>
+
+  <p>
+    📞 Chamadas: 871 176 035
+  </p>
+
+  <p>
+    © 2026 Chongoene Computer Training Center
+  </p>
+
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

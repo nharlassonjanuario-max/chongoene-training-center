@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- MODAL EDITAR -->
+    <div id="modalEditar" class="modal">
+
+        <div class="modal-content">
+
+            <h2>Editar Aluno</h2>
+
+            <input id="editNome" placeholder="Nome">
+
+            <input id="editTelefone" placeholder="Telefone">
+
+            <select id="editCurso">
+                <option>Informática Básica</option>
+                <option>Informática Avançada</option>
+                <option>Excel Avançado e Profissional</option>
+                <option>Inglês (3 Níveis)</option>
+                <option>Programação Web</option>
+            </select>
+
+            <select id="editNivel">
+                <option>Básico I</option>
+                <option>Básico II</option>
+                <option>Intermédio</option>
+            </select>
+
+            <select id="editMetodo">
+                <option>M-Pesa</option>
+                <option>E-Mola</option>
+                <option>Banco</option>
+            </select>
+
+            <div class="modal-actions">
+                <button onclick="salvarEdicao()">💾 Salvar</button>
+                <button onclick="fecharModal()">❌ Cancelar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <div class="logo-admin">
+                <img src="image/logotipo.png" alt="Logotipo">
+                <h2>Chongoene</h2>
+                <p>Computer Training Center</p>
+            </div>
+
+            <a href="#">📊 Dashboard</a>
+            <a href="#">📝 Inscrições</a>
+
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <div class="header">
+                <h1>Painel Administrativo</h1>
+
+                <button class="btn-logout" onclick="logout()">
+                    Sair
+                </button>
+            </div>
+
+            <!-- CARDS -->
+            <div class="cards">
+
+                <div class="card blue" id="total">
+                    Total: 0
+                </div>
+
+                <div class="card green" id="confirmados">
+                    Confirmados: 0
+                </div>
+
+                <div class="card orange" id="pendentes">
+                    Pendentes: 0
+                </div>
+
+            </div>
+
+            <!-- TABELA -->
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Curso</th>
+                        <th>Pagamento</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="lista"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>
