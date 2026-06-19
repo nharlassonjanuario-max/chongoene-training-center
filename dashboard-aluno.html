@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Aluno</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="main">
+
+        <div class="header">
+
+            <h1>Área do Aluno</h1>
+
+            <button onclick="logout()" class="btn-logout">
+                Sair
+            </button>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card blue">
+                <h3>Nome</h3>
+                <span id="nomeAluno">---</span>
+            </div>
+
+            <div class="card green">
+                <h3>Email</h3>
+                <span id="emailAluno">---</span>
+            </div>
+
+        </div>
+
+        <div class="table-container">
+
+            <h2 style="padding:20px;">
+                Minhas Inscrições
+            </h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Nível</th>
+                        <th>Pagamento</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaInscricoes">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="card orange" style="margin-top:20px;">
+
+            <h3>Pagamento</h3>
+
+            <p>
+                E-Mola: <strong>870569900</strong>
+            </p>
+
+            <p>
+                Envie o comprovativo para o WhatsApp.
+            </p>
+
+            <a
+                href="https://wa.me/258870569900"
+                target="_blank"
+                class="btn-confirmar"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="module" src="js/dashboard-aluno.js"></script>
+
+</body>
+</html>

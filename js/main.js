@@ -1,63 +1,136 @@
-function mostrarNumero() {
+import {
+    auth,
+    db,
+    collection,
+    addDoc
+} from "./firebase.js";
 
-    const metodo = document.getElementById("metodo").value;
+window.inscrever = async function () {
 
-    const numero = document.getElementById("numeroPagamento");
+    const user = auth.currentUser;
 
-    if (metodo === "M-Pesa") {
+    if (!user) {
 
-        numero.innerHTML = "M-Pesa: 870 569 900";
+        alert(
+            "Faça login ou crie uma conta antes de se inscrever."
+        );
 
-    } else if (metodo === "E-Mola") {
-
-        numero.innerHTML = "E-Mola: 871 176 035";
-
-    } else {
-
-        numero.innerHTML = "";
-
-    }
-
-}
-
-function inscrever() {
-
-    const nome = document.getElementById("nome").value;
-    const telefone = document.getElementById("telefone").value;
-    const curso = document.getElementById("curso").value;
-    const nivel = document.getElementById("nivel").value;
-    const metodo = document.getElementById("metodo").value;
-
-    if (!nome || !telefone || !curso) {
-
-        alert("Preencha todos os campos.");
+        window.location.href = "login-aluno.html";
 
         return;
     }
 
-    let lista =
-        JSON.parse(localStorage.getItem("inscricoes")) || [];
+    const nome =
+        document.getElementById("nome").value.trim();
 
-    lista.push({
-        nome,
-        telefone,
-        curso,
-        nivel,
-        metodo,
-        status: "pendente"
-    });
+    const telefone =
+        document.getElementById("telefone").value.trim();
 
-    localStorage.setItem(
-        "inscricoes",
-        JSON.stringify(lista)
-    );
+    const curso =
+        document.getElementById("curso").value;
 
-    document.getElementById("resposta").innerHTML =
-    `
-    <div class="confirmacao">
-        <h3>Inscrição enviada com sucesso!</h3>
-        <p>${nome}</p>
-    </div>
-    `;
+    const nivel =
+        document.getElementById("nivel").value;
 
-}
+    if (
+        nome === "" ||
+        telefone === "" ||
+        curso === ""
+    ) {
+
+        alert(
+            "Preencha todos os campos obrigatórios."
+        );
+
+        return;
+    }
+
+    try {
+
+        await addDoc(
+            collection(db, "inscricoes"),
+            {
+                nome: nome,
+                telefone: telefone,
+                email: user.email,
+                curso: curso,
+                nivel: nivel || "",
+                metodo: "E-Mola",
+                status: "pendente",
+                dataInscricao:
+                    new Date().toISOString()
+            }
+        );
+
+        document.getElementById("resposta").innerHTML = `
+
+        <div class="confirmacao">
+
+            <h3>
+                Inscrição enviada com sucesso!
+            </h3>
+
+            <p>
+                Obrigado,
+                <strong>${nome}</strong>.
+            </p>
+
+            <p>
+                A sua inscrição foi registada no sistema.
+            </p>
+
+            <div class="dados-pagamento">
+
+                <h2>
+                    E-Mola
+                </h2>
+
+                <p>
+                    <strong>870569900</strong>
+                </p>
+
+                <p>
+                    Efetue o pagamento e envie o comprovativo
+                    para o WhatsApp abaixo.
+                </p>
+
+            </div>
+
+            <a
+                href="https://wa.me/258870569900"
+                target="_blank"
+                class="btn-whatsapp"
+            >
+                Enviar Comprovativo
+            </a>
+
+        </div>
+
+        `;
+
+        document.getElementById("nome").value = "";
+        document.getElementById("telefone").value = "";
+        document.getElementById("curso").value = "";
+        document.getElementById("nivel").value = "";
+
+        document
+            .getElementById("resposta")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+    catch (error) {
+
+        console.error(
+            "Erro ao inscrever:",
+            error
+        );
+
+        alert(
+            "Erro ao enviar inscrição. Verifique a ligação ao Firebase."
+        );
+
+    }
+
+};

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Chongoene CTC</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <div class="logo-admin">
+            <img src="image/logotipo.png" alt="Logo">
+            <h2>Chongoene</h2>
+            <p>Computer Training Center</p>
+        </div>
+
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="admin.html">📝 Inscrições</a>
+
+    </div>
+
+    <div class="main">
+
+        <div class="header">
+            <h1>Dashboard</h1>
+
+            <button onclick="logout()" class="btn-logout">
+                Sair
+            </button>
+        </div>
+
+        <div class="cards">
+
+            <div class="card blue">
+                <h3>Total</h3>
+                <span id="total">0</span>
+            </div>
+
+            <div class="card green">
+                <h3>Confirmados</h3>
+                <span id="confirmados">0</span>
+            </div>
+
+            <div class="card orange">
+                <h3>Pendentes</h3>
+                <span id="pendentes">0</span>
+            </div>
+
+            <div class="card purple">
+                <h3>Cursos</h3>
+                <span id="cursos">5</span>
+            </div>
+
+        </div>
+
+        <div class="grafico-box">
+
+            <h2>Inscrições por Curso</h2>
+
+            <canvas id="graficoCursos"></canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>

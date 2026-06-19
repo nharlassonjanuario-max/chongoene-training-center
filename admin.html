@@ -11,91 +11,55 @@
 
 <body>
 
-    <!-- MODAL EDITAR -->
-    <div id="modalEditar" class="modal">
+<div class="container">
 
-        <div class="modal-content">
+    <aside class="sidebar">
 
-            <h2>Editar Aluno</h2>
+        <div class="logo-admin">
+            <img src="image/logotipo.png" alt="Logotipo">
+            <h2>Chongoene</h2>
+            <p>Computer Training Center</p>
+        </div>
 
-            <input id="editNome" placeholder="Nome">
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="admin.html">Inscrições</a>
+            <a href="#" onclick="logout()">Sair</a>
+        </nav>
 
-            <input id="editTelefone" placeholder="Telefone">
+    </aside>
 
-            <select id="editCurso">
-                <option>Informática Básica</option>
-                <option>Informática Avançada</option>
-                <option>Excel Avançado e Profissional</option>
-                <option>Inglês (3 Níveis)</option>
-                <option>Programação Web</option>
-            </select>
+    <main class="main">
 
-            <select id="editNivel">
-                <option>Básico I</option>
-                <option>Básico II</option>
-                <option>Intermédio</option>
-            </select>
+        <div class="header">
+            <h1>Painel Administrativo</h1>
 
-            <select id="editMetodo">
-                <option>M-Pesa</option>
-                <option>E-Mola</option>
-                <option>Banco</option>
-            </select>
+            <button class="btn-logout" onclick="logout()">
+                Sair
+            </button>
+        </div>
 
-            <div class="modal-actions">
-                <button onclick="salvarEdicao()">💾 Salvar</button>
-                <button onclick="fecharModal()">❌ Cancelar</button>
+        <div class="cards">
+
+            <div class="card blue">
+                <h3>Total</h3>
+                <span id="total">0</span>
+            </div>
+
+            <div class="card green">
+                <h3>Confirmados</h3>
+                <span id="confirmados">0</span>
+            </div>
+
+            <div class="card orange">
+                <h3>Pendentes</h3>
+                <span id="pendentes">0</span>
             </div>
 
         </div>
 
-    </div>
+        <div class="table-container">
 
-    <div class="container">
-
-        <!-- SIDEBAR -->
-        <div class="sidebar">
-
-            <div class="logo-admin">
-                <img src="image/logotipo.png" alt="Logotipo">
-                <h2>Chongoene</h2>
-                <p>Computer Training Center</p>
-            </div>
-
-            <a href="#">📊 Dashboard</a>
-            <a href="#">📝 Inscrições</a>
-
-        </div>
-
-        <!-- MAIN -->
-        <div class="main">
-
-            <div class="header">
-                <h1>Painel Administrativo</h1>
-
-                <button class="btn-logout" onclick="logout()">
-                    Sair
-                </button>
-            </div>
-
-            <!-- CARDS -->
-            <div class="cards">
-
-                <div class="card blue" id="total">
-                    Total: 0
-                </div>
-
-                <div class="card green" id="confirmados">
-                    Confirmados: 0
-                </div>
-
-                <div class="card orange" id="pendentes">
-                    Pendentes: 0
-                </div>
-
-            </div>
-
-            <!-- TABELA -->
             <table>
 
                 <thead>
@@ -103,22 +67,26 @@
                         <th>Nome</th>
                         <th>Telefone</th>
                         <th>Curso</th>
+                        <th>Nível</th>
                         <th>Pagamento</th>
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
 
-                <tbody id="lista"></tbody>
+                <tbody id="lista">
+
+                </tbody>
 
             </table>
 
         </div>
 
-    </div>
+    </main>
 
-    <script src="js/admin.js"></script>
+</div>
+
+<script type="module" src="js/admin.js"></script>
 
 </body>
-
 </html>
